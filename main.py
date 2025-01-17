@@ -26,7 +26,7 @@ def parse_args():
 
   # basic
   parser.add_argument('--batch-size', type=int, default=128, help='number of samples per batch (default=1)')
-  parser.add_argument('--iters', type=int, default=1000, help='number of iterations (deafult=1000)')
+  parser.add_argument('--iters', type=int, default=10000, help='number of iterations (deafult=10000)')
   parser.add_argument('--device', type=str, default='cuda', choices=['cuda', 'cpu'], help='device to use')
   parser.add_argument('--runs', type=int, default=5, help='number of runs for each sampler (default=5)')
 

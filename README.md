@@ -20,10 +20,10 @@ Experiment with 5 different sampling strategies for Stochastic Gradient Descent 
 ## Running Experiments
 To run the experiment, execute:
 ```bash
-./main.py --batch-size=128 --iters=5000 --runs=5
+./main.py --batch-size=128 --iters=10000 --runs=5
 ```
 
-Run `./main.py --help` to see all options.
+Run `./main.py --help` to see all the options.
 
 ## Viewing Results
 Results are saved in `result.json` with the following metrics of each individual run:
