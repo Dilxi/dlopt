@@ -21,7 +21,7 @@ class Trainer:
     self.criterion = criterion
     self.sampler = sampler
     self.device = device
-    self.metrics = dict(training_loss=[])
+    self.metrics = dict(training_loss=[], test_accuracy=[])
 
     if self.sampler.requires_grad():
       params = {k: v.detach() for k, v in self.model.named_parameters()}
@@ -67,10 +67,15 @@ class Trainer:
 
       if step % 100 == 0:
         logger.info(f'Iteration {step}: Loss {loss.item():.6f}')
+
+      if step % 1000 == 0:
+        self.metrics[f'test_accuracy'].append(self.test_accuracy(test_loader))
+        logger.info(f'Test accuracy {self.metrics["test_accuracy"][-1]:.6f}')
+
       if step == num_iterations:
         break
 
-    self.metrics["final_accuracy"] = self.test_accuracy(test_loader)
+    self.metrics['final_accuracy'] = self.test_accuracy(test_loader)
     logger.info(f'Final test accuracy: {self.metrics["final_accuracy"]:.6f}')
 
   def test_accuracy(self, test_loader):

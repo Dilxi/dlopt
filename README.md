@@ -33,7 +33,7 @@ Results are saved in `result.json` with the following metrics of each individual
 - Training loss after each iteration
 - Final test accuracy
 
-Run `./plot.py` to plot.
+Run `./plot.py` to plot the results in `result.json`. The two plots will be saved as `accuracy.png` and `loss.png`.
 
 ## Acknowledgements
 
